@@ -1,0 +1,223 @@
+/* --- Reset & Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Changed to Manrope to match your login page style */
+    font-family: 'Manrope', 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #f4f7f9;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* -- Left Side -- */
+.left {
+    width: 45%; /* Adjusted to 45% to match login page exactly */
+    background-color: #1B498A;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.footer h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer h2 span {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* -- Right Side -- */
+.right {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.material-symbols-outlined {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 48px;
+    color: #1B498A;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.description h3 {
+    font-size: 32px; /* Increased to match your login page headers */
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.description p {
+    max-width: 400px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* -- Form Styling -- */
+form {
+    width: 100%;
+    max-width: 380px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #1B498A;
+    box-shadow: 0 0 0 3px rgba(24, 76, 114, 0.1);
+}
+
+/* -- Buttons -- */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #1B498A;
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary:hover {
+    background-color: #133a57;
+}
+
+.btn-primary:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: #1B498A;
+    transition: 0.2s;
+}
+
+.btn-secondary:hover {
+    text-decoration: underline;
+}
+
+/* --- Spinner Styles --- */
+.spinner {
+    display: none; /* Hidden by default */
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s linear infinite;
+}
+
+.btn-primary.loading .btn-text {
+    display: none;
+}
+
+.btn-primary.loading .spinner {
+    display: block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* -- Responsive Mobile -- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .left {
+        width: 100%;
+        padding: 40px 20px;
+    }
+    .sidebar-content {
+        gap: 20px;
+    }
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TaskFlow - Login</title>
+        <link rel="stylesheet" href="../../css/Login.css">
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <div class="container">
+        <div class="left">
+            <div class="sidebar-content">
+                <div class="logo">
+                    <img src="/images/logo.png" alt="TaskFlow Logo">
+                    <h3>TaskFlow</h3>
+                </div>
+                <div class="footer">
+                    <h2>Streamline your workflow<br><span>Focus on what matters most.</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="form-wrapper">
+                <div class="entry_message">
+                    <h3>Welcome Back</h3>
+                    <p>Please enter your details to sign in</p>
+                </div>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="name@company.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="label-row">
+                            <label for="password">Password</label>
+                            <a href="ResetPassword.html" class="forgot-link">Forgot password?</a>
+                        </div>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="loginBtn">
+                        <span class="btn-text">Log In</span>
+                        <div class="spinner" id="loader"></div>
+                    </button>
+                </form>
+                <p class="switch-link">Don't have an account? <a href="RegisterPage.html">Register Now</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="/js/LoginUser.js" type="module"></script>
+    </body>
+</html>
+
