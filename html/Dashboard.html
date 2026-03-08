@@ -1,22 +1,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta http-equiv="Cross-Origin-Opener-Policy" content="unsafe-none">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/Dashboard.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TaskMaster Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/Dashboard.css">
 </head>
 <body>
 <div class="container">
     <div class="left">
         <div class="logo">
-            <img src="/images/logo.png" alt="TaskFlow Logo">
+            <img src="/images/logo.png" alt="Logo">
             <div class="text">
                 <h3>TaskMaster</h3>
                 <p>Workspace v2.0</p>
@@ -24,21 +19,15 @@
         </div>
         <div class="menu">
             <ul>
-                <li id="filter-today" class="active">
-                    <span class="material-symbols-outlined">calendar_today</span>Today
-                </li>
-                <li id="filter-upcoming">
-                    <span class="material-symbols-outlined">event_upcoming</span>Upcoming
-                </li>
-                <li id="filter-completed">
-                    <span class="material-symbols-outlined">task_alt</span>Completed
-                </li>
+                <li id="filter-today" class="active"><span class="material-symbols-outlined">calendar_today</span>Today</li>
+                <li id="filter-upcoming"><span class="material-symbols-outlined">event_upcoming</span>Upcoming</li>
+                <li id="filter-completed"><span class="material-symbols-outlined">task_alt</span>Completed</li>
             </ul>
         </div>
         <div class="bottom">
             <div class="user">
                 <span class="material-symbols-outlined symbol">person</span>
-                <p>Loading...</p>
+                <p id="user-display-name">Loading...</p>
             </div>
         </div>
     </div>
@@ -54,17 +43,9 @@
 
         <div class="heading">
             <h3 id="current-filter-title">Today's Tasks</h3>
-            <div class="tiles">
-                <div class="pill-btn">
-                    <span class="material-symbols-outlined">filter_list</span> Filter
-                </div>
-                <div class="pill-btn">
-                    <span class="material-symbols-outlined">sort</span> Sort
-                </div>
-            </div>
         </div>
 
-        <div class="task-container"></div>
+        <div class="task-container" id="task-container"></div>
 
         <span class="material-symbols-outlined" id="addtask">add</span>
 
@@ -75,34 +56,29 @@
                     <span class="material-symbols-outlined">check_circle</span>
                     <p>Drafting New Task</p>
                 </div>
-                <div class="title">
-                    <p>Task Title</p>
-                    <input type="text" class="task-input" placeholder="Task name or title">
+                <div class="input-group">
+                    <label>Task Title</label>
+                    <input type="text" class="task-input" placeholder="Task name">
                 </div>
-                <div class="description">
-                    <p>Description</p>
-                    <textarea id="description" placeholder="Enter task description"></textarea>
+                <div class="input-group">
+                    <label>Description</label>
+                    <textarea id="description" placeholder="Enter details"></textarea>
                 </div>
-                <div class="date">
-                    <p>Due Date</p>
-                    <input type="date" class="due-date">
+                <div class="input-group">
+                    <label>Due Date & Time</label>
+                    <div style="display:flex; gap:10px;">
+                        <input type="date" class="due-date" style="flex:2;">
+                        <input type="time" id="appt" style="flex:1;">
+                    </div>
                 </div>
-                <div class="time">
-                    <p>Time</p>
-                    <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
-                </div>
-                <div class="create_btn">
-                    <button class="add-task-btn">Add Task</button>
-                </div>
+                <button class="add-task-btn">Add Task</button>
             </div>
         </div>
     </div>
 </div>
-<!-- Load Google API libraries first -->
+
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="https://apis.google.com/js/api.js" async defer></script>
-
-<!-- Then load your app logic -->
 <script type="module" src="../js/main.js"></script>
 </body>
 </html>
